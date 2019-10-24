@@ -108,7 +108,7 @@ abstract class MapGestureMixin extends State<FlutterMap>
     }
     final latlng = _offsetToCrs(position.relative);
     // emit the event
-    options.onTap(latlng);
+    options.onTap(position, latlng);
   }
 
   void handleLongPress(TapPosition position) {

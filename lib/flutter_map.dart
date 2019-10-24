@@ -9,6 +9,7 @@ import 'package:flutter_map/src/map/flutter_map_state.dart';
 import 'package:flutter_map/src/map/map.dart';
 import 'package:flutter_map/src/plugins/plugin.dart';
 import 'package:latlong/latlong.dart';
+import 'package:positioned_tap_detector/positioned_tap_detector.dart';
 
 export 'package:flutter_map/src/core/point.dart';
 export 'package:flutter_map/src/geo/crs/crs.dart';
@@ -70,6 +71,9 @@ abstract class MapController {
   /// Sets the map rotation to a certain degrees angle (in decimal).
   void rotate(double degree);
 
+  //PixelPoint To Latlng
+  LatLng layerPointToLatLng(CustomPoint point);
+
   /// Fits the map bounds. Optional constraints can be defined
   /// through the [options] parameter.
   void fitBounds(LatLngBounds bounds, {FitBoundsOptions options});
@@ -89,7 +93,7 @@ abstract class MapController {
   factory MapController() => MapControllerImpl();
 }
 
-typedef void TapCallback(LatLng point);
+typedef void TapCallback(TapPosition position, LatLng point);
 typedef void LongPressCallback(LatLng point);
 typedef void PositionCallback(MapPosition position, bool hasGesture);
 

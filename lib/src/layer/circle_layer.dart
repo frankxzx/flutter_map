@@ -66,6 +66,9 @@ class CircleLayer extends StatelessWidget {
             circle.realRadius = rpos.y - pos.y;
           }
 
+          debugPrint(circle.offset.toString());
+          debugPrint(circle.realRadius.toString());
+
           circleWidgets.add(
             CustomPaint(
               painter: CirclePainter(circle),
@@ -91,6 +94,7 @@ class CirclePainter extends CustomPainter {
   @override
   void paint(Canvas canvas, Size size) {
     final rect = Offset.zero & size;
+    debugPrint(rect.toString());
     canvas.clipRect(rect);
     final paint = Paint()
       ..style = PaintingStyle.fill

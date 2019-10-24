@@ -125,6 +125,8 @@ class MarkerLayer extends StatelessWidget {
             continue;
           }
 
+          debugPrint('$pixelPosX, $pixelPosY');
+
           markers.add(
             Positioned(
               width: markerOpt.width,

@@ -45,7 +45,11 @@ class TapToAddPageState extends State<TapToAddPage> {
                 options: MapOptions(
                     center: LatLng(45.5231, -122.6765),
                     zoom: 13.0,
-                    onTap: _handleTap),
+                    onTap: (position, latlng) {
+                      setState(() {
+                        tappedPoints.add(latlng);
+                      });
+                    }),
                 layers: [
                   TileLayerOptions(
                     urlTemplate:
@@ -59,11 +63,5 @@ class TapToAddPageState extends State<TapToAddPage> {
         ),
       ),
     );
-  }
-
-  void _handleTap(LatLng latlng) {
-    setState(() {
-      tappedPoints.add(latlng);
-    });
   }
 }

@@ -24,6 +24,11 @@ class MapControllerImpl implements MapController {
   }
 
   @override
+  LatLng layerPointToLatLng(CustomPoint point) {
+    return _state.layerPointToLatLng(point);
+  }
+
+  @override
   void move(LatLng center, double zoom, {bool hasGesture = false}) {
     _state.move(center, zoom, hasGesture: hasGesture);
   }

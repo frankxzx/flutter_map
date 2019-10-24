@@ -22,3 +22,5 @@ ios/Flutter/Generated.xcconfig
 /flutter_map_example/pubspec.lock
 /flutter_map_example/.flutter-plugins
 /flutter_map_example/.vscode/
+.packages
+example/ios/Flutter/flutter_export_environment.sh

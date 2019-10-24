@@ -95,6 +95,16 @@ class CrsSimple extends Crs {
 
   @override
   Tuple2<double, double> get wrapLng => null;
+
+  @override
+  num scale(double zoom) {
+    return 2 * math.pow(2, zoom);
+  }
+
+  @override
+  num zoom(double scale) {
+    return math.log(scale / 2) / math.ln2;
+  }
 }
 
 abstract class Earth extends Crs {
